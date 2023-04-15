@@ -101,7 +101,7 @@ const useStyles = makeStyles({
 });
 
 
-function Address() {
+function Address2() {
     const classes = useStyles();
 
     return (
@@ -151,4 +151,4 @@ function Address() {
         </div>
     );
 }
-export default Address;
+export default Address2;
