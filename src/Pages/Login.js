@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import EmailIcon from '@mui/icons-material/Email';
 import TextField from '@material-ui/core/TextField';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
     container: {
@@ -77,7 +79,7 @@ const useStyles = makeStyles({
 function Login() {
 
     const classes = useStyles();
-
+    const navigate = useNavigate();
 
     const [accessKey, setAccessKey] = useState('');
     const [email, setEmail] = useState('');
@@ -132,9 +134,15 @@ function Login() {
                                     error={loginError}
                                     helperText={accessKey}
                                 />
+                                 <Grid container spacing={3} alignItems="flex-end"></Grid>
+                                <Grid item>
+
+                                    <p>
+                                        Don't have an account? <Link to='/registration'>sign up</Link>
+                                    </p>      
                             </Grid>
-
-
+                            </Grid>
+                            
                         </Grid>
                     </div>
                     <button className={classes.button} type="submit"> Login </button>
