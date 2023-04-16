@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles({
     container: {
@@ -103,6 +105,8 @@ const useStyles = makeStyles({
 
 function Address2() {
     const classes = useStyles();
+    const navigate = useNavigate();
+
 
     return (
         <div>
@@ -145,7 +149,7 @@ function Address2() {
                         multiline
                         className={classes.textField5}
                     />
-                    <button className={classes.button} type="submit"> Next</button>
+                    <button className={classes.button} type="submit"><Link to='/menu'>Next</Link></button>
                 </div>
             </div>
         </div>
