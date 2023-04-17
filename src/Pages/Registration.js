@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -115,6 +116,33 @@ const useStyles = makeStyles({
 function Registration() {
     const classes = useStyles();
      const navigate = useNavigate();
+    const [firstName, setFirstName] = useState(null);
+    const [lastName, setLastName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState(null);
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        if (id === "firstName") {
+            setFirstName(value);
+        }
+        if (id === "lastName") {
+            setLastName(value);
+        }
+        if (id === "email") {
+            setEmail(value);
+        }
+        if (id === "password") {
+            setPassword(value);
+        }
+        if (id === "confirmPassword") {
+            setConfirmPassword(value);
+        }
+        }
+
+    const handleSubmit = () => {
+        console.log(firstName, lastName, email, password, confirmPassword);
+    }
 
 
     return (
