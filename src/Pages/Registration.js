@@ -45,7 +45,7 @@ const useStyles = makeStyles({
         backgroundColor: '#fff',
         width: 500,
         position: 'absolute',
-        top: 30,
+        top: 10,
         '& .MuiOutlinedInput-notchedOutline': {
             borderColor: '#0077B6'
         }
@@ -54,7 +54,7 @@ const useStyles = makeStyles({
         backgroundColor: '#fff',
         width: 500,
         position: 'absolute',
-        top: 60,
+        top: 20,
         '& .MuiOutlinedInput-notchedOutline': {
             borderColor: '#0077B6'
         }
@@ -63,7 +63,7 @@ const useStyles = makeStyles({
         backgroundColor: '#fff',
         width: 500,
         position: 'absolute',
-        top: 90,
+        top: 30,
 
         '& .MuiOutlinedInput-notchedOutline': {
             borderColor: '#0077B6'
@@ -73,7 +73,25 @@ const useStyles = makeStyles({
         backgroundColor: '#fff',
         width: 500,
         position: 'absolute',
-        top: 120,
+        top: 40,
+        '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#0077B6'
+        }
+    },
+    textField6: {
+        backgroundColor: '#fff',
+        width: 500,
+        position: 'absolute',
+        top: 50,
+        '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#0077B6'
+        }
+    },
+    textField7: {
+        backgroundColor: '#fff',
+        width: 500,
+        position: 'absolute',
+        top: 60,
         '& .MuiOutlinedInput-notchedOutline': {
             borderColor: '#0077B6'
         }
@@ -115,10 +133,11 @@ const useStyles = makeStyles({
 
 function Registration() {
     const classes = useStyles();
-     const navigate = useNavigate();
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState(null);
     const [lastName, setLastName] = useState(null);
     const [email, setEmail] = useState(null);
+    const [phoneNumber, setPhoneNumber] = useState(null);
     const [password, setPassword] = useState(null);
     const [confirmPassword, setConfirmPassword] = useState(null);
     const handleInputChange = (e) => {
@@ -132,16 +151,19 @@ function Registration() {
         if (id === "email") {
             setEmail(value);
         }
+        if (id === "phoneNumber") {
+            setPhoneNumber(value);
+        }
         if (id === "password") {
             setPassword(value);
         }
         if (id === "confirmPassword") {
             setConfirmPassword(value);
         }
-        }
+    }
 
     const handleSubmit = () => {
-        console.log(firstName, lastName, email, password, confirmPassword);
+        console.log(firstName, lastName, email, phoneNumber, password, confirmPassword);
     }
 
 
@@ -180,12 +202,27 @@ function Registration() {
                         multiline
                         className={classes.textField4}
                     />
+
                     <TextField
                         id="outlined-textarea"
                         label="Phone Number"
                         placeholder=" Enter Your Phone Number"
                         multiline
                         className={classes.textField5}
+                    />
+                    <TextField
+                        id="outlined-textarea"
+                        label="Password"
+                        placeholder=" Enter Your password"
+                        multiline
+                        className={classes.textField6}
+                    />
+                    <TextField
+                        id="outlined-textarea"
+                        label="Confirmed Password"
+                        placeholder=" Enter Your Confirmed Password"
+                        multiline
+                        className={classes.textField7}
                     />
                     <button className={classes.button} type="submit"><Link to='/address'>Next</Link></button>
 
