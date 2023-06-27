@@ -79,7 +79,11 @@ function Login() {
   const handleSubmit = () => {
     console.log(data);
     axios
-      .post("http://localhost:8000/api/v1/accounts/token/login", data, {})
+      .post(
+        "https://cherrymaebatiquin.pythonanywhere.com/api/v1/accounts/token/login",
+        data,
+        {}
+      )
       .then((response) => {
         console.log(response.data);
         navigate("/dashboard");

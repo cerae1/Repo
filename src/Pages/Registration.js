@@ -147,7 +147,11 @@ function Registration() {
   const handleSubmit = () => {
     console.log(data);
     axios
-      .post("http://localhost:8000/api/v1/accounts/users/", data, {})
+      .post(
+        "https://cherrymaebatiquin.pythonanywhere.com/api/v1/accounts/users/",
+        data,
+        {}
+      )
       .then((response) => {
         console.log(response.data);
         alert(
